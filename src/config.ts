@@ -13,6 +13,7 @@ const production = env === 'production'
 export default {
 	env,
 	production,
+	phys_loc: process.env.PHYSICAL_LOCATION || 'us-west-1',
 	clients: [
 		{
 			id: process.env.EXPIDUS_CLOUD_CLIENT_ID,
@@ -22,9 +23,7 @@ export default {
 		}
 	],
 	database: {
-		clientUrl: env === 'test'
-			? 'sqlite::memory'
-			: `mariadb://${process.env.MYSQL_USER}:${process.env.MYSQL_PASSWORD}@db/${process.env.MYSQL_USER}`,
+		clientUrl: `mariadb://${process.env.MYSQL_USER}:${process.env.MYSQL_PASSWORD}@db/${process.env.MYSQL_USER}`,
     debug: !production,
     type: 'mariadb'
 	} as Options,

@@ -3,7 +3,7 @@ import winston from './providers/winston'
 
 const server = new Server()
 
-server.start().then(() => {}).catch((err) => {
+server.start().catch((err) => {
 	winston.error(`Bootstrap error: ${err.stack}`)
 	process.exit(1)
 })

@@ -1,7 +1,7 @@
 import waitOn from 'wait-on'
 import winston from './providers/winston'
 import app from './http/app'
-import { orm } from './database'
+import { init } from './di'
 import config from './config'
 
 export default class Server {
@@ -18,7 +18,7 @@ export default class Server {
 			})
 		}
 
-		await orm()
+		await init()
 		winston.info('connected to database sucessfully')
 
 		app.listen(3000, () => {
