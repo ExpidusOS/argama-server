@@ -1,3 +1,5 @@
+import { Options } from '@mikro-orm/core'
+
 const env = process.env.NODE_ENV || 'development'
 
 const logLevels: Record<string, string> = {
@@ -25,7 +27,7 @@ export default {
 			: `mariadb://${process.env.MYSQL_USER}:${process.env.MYSQL_PASSWORD}@db/${process.env.MYSQL_USER}`,
     debug: !production,
     type: 'mariadb'
-	},
+	} as Options,
 	winston: {
 		level: logLevels[env]
 	}

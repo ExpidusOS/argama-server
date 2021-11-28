@@ -10,7 +10,7 @@ export default class Server {
 
 		winston.info('connecting to database')
 
-		if (config.database.connection !== 'sqlite::memory') {
+		if (config.database.clientUrl !== 'sqlite::memory') {
 			await waitOn({
 				resources: [
 					'tcp:db:3306'
