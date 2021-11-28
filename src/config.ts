@@ -13,7 +13,7 @@ const production = env === 'production'
 export default {
 	env,
 	production,
-	phys_loc: process.env.PHYSICAL_LOCATION || 'us-west-1',
+	region: process.env.PHYSICAL_LOCATION || 'us-west-1',
 	clients: [
 		{
 			id: process.env.EXPIDUS_CLOUD_CLIENT_ID,

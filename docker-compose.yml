@@ -24,7 +24,11 @@ services:
     networks:
       - servers
     restart: on-failure
-networks:
-  servers:
+
 volumes:
   data-db:
+
+networks:
+  servers:
+    name: argama_servers
+    driver: bridge
