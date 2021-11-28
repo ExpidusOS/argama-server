@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 import { BaseMessage } from '../../../message'
-import { region } from '../../../config'
+import config from '../../../config'
 import { version, repository, homepage, devDependencies, author, license } from '../../../../package.json'
 
 export default function() {
@@ -14,6 +14,7 @@ export default function() {
 					devDependencies,
 					author,
 					license,
+					region: config.region,
 					version
 				}, 'instance:info'))
 			} catch (e) {
