@@ -5,6 +5,7 @@ export default function(): Router {
 	const router = Router()
 	const controller = genController()
 
+	router.get('/stats', controller.stats)
 	router.get('/info', controller.info)
 	return router
 }
